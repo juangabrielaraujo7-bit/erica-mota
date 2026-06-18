@@ -1,4 +1,4 @@
-/* Clínica Dra. Erica Mota — interações */
+/* Marcia Martins Estética — interações */
 (function () {
   "use strict";
 

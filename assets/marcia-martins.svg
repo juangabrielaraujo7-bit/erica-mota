@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" preserveAspectRatio="xMidYMid slice">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#f7ece9"/>
-      <stop offset="0.55" stop-color="#f3d9d4"/>
-      <stop offset="1" stop-color="#e7b9b2"/>
+      <stop offset="0" stop-color="#eef4ef"/>
+      <stop offset="0.55" stop-color="#dde9e0"/>
+      <stop offset="1" stop-color="#c2d6c8"/>
     </linearGradient>
     <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#d9c39a"/>
@@ -18,7 +18,7 @@
     <path d="M150 800c0-110 76-205 170-205s170 95 170 205z"/>
   </g>
   <circle cx="320" cy="300" r="170" fill="none" stroke="url(#gold)" stroke-width="2" opacity="0.7"/>
-  <text x="320" y="640" font-family="Georgia, serif" font-size="42" font-weight="600" fill="#b97c74" text-anchor="middle">Dra. Erica Mota</text>
-  <text x="320" y="678" font-family="Arial, sans-serif" font-size="17" letter-spacing="4" fill="#b08f4f" text-anchor="middle">ESTÉTICA AVANÇADA</text>
-  <text x="320" y="730" font-family="Arial, sans-serif" font-size="14" fill="#6e6360" text-anchor="middle" opacity="0.8">substitua por assets/dra-erica.jpg</text>
+  <text x="320" y="640" font-family="Georgia, serif" font-size="42" font-weight="600" fill="#46715c" text-anchor="middle">Marcia Martins</text>
+  <text x="320" y="678" font-family="Arial, sans-serif" font-size="17" letter-spacing="4" fill="#b08f4f" text-anchor="middle">ESTÉTICA &amp; BEM-ESTAR</text>
+  <text x="320" y="730" font-family="Arial, sans-serif" font-size="14" fill="#5f6b64" text-anchor="middle" opacity="0.8">substitua por assets/marcia-martins.jpg</text>
 </svg>
