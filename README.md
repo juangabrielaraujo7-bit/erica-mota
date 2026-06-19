@@ -22,14 +22,16 @@ sitemap.xml
 Salve as imagens dentro da pasta **`assets/`** com EXATAMENTE estes nomes. A página
 detecta cada arquivo automaticamente e troca o placeholder pela foto real — sem mexer no código:
 
-| Arquivo                   | Onde aparece           | Sugestão                                   |
-| ------------------------- | ---------------------- | ------------------------------------------ |
-| `assets/dra-erica.jpg`    | Hero **e** seção Sobre | Vertical, ~640×800px ou maior              |
-| `assets/antes-depois.jpg` | Seção Antes & Depois   | Imagem única com antes e depois lado a lado |
+| Arquivo                     | Onde aparece           | Sugestão                                    |
+| --------------------------- | ---------------------- | ------------------------------------------- |
+| `assets/dra-erica.jpg`      | Hero **e** seção Sobre | Vertical, ~640×800px ou maior               |
+| `assets/antes-depois-1.jpg` | Seção Antes & Depois   | Imagem única com antes e depois lado a lado |
+| `assets/antes-depois-2.jpg` | Seção Antes & Depois   | Imagem única com antes e depois lado a lado |
 
-> A imagem de antes/depois é **um único arquivo** (já com os dois lados na mesma foto).
-> Os selos "Antes" e "Depois" são adicionados automaticamente sobre a imagem.
-> Enquanto os `.jpg` não existirem, placeholders sofisticados são exibidos no lugar.
+> Cada imagem de antes/depois é **um único arquivo** (já com os dois lados na mesma foto).
+> São exibidas duas, lado a lado. Os selos "Antes" e "Depois" são adicionados
+> automaticamente sobre cada imagem. Enquanto os `.jpg` não existirem, placeholders
+> sofisticados são exibidos no lugar.
 
 ## Personalizações rápidas
 
