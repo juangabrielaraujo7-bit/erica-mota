@@ -101,6 +101,24 @@
     });
   });
 
+  /* Título animado (troca de palavra na Hero) */
+  var rotateWord = document.getElementById("rotateWord");
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (rotateWord && !reduceMotion) {
+    var words = (rotateWord.getAttribute("data-words") || "").split(",").map(function (w) { return w.trim(); }).filter(Boolean);
+    if (words.length > 1) {
+      var wi = 0;
+      setInterval(function () {
+        rotateWord.classList.add("swap");
+        setTimeout(function () {
+          wi = (wi + 1) % words.length;
+          rotateWord.textContent = words[wi];
+          rotateWord.classList.remove("swap");
+        }, 400);
+      }, 2600);
+    }
+  }
+
   /* Botão voltar ao topo */
   var toTop = document.getElementById("toTop");
   if (toTop) {
