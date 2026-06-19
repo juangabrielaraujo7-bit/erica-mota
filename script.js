@@ -91,24 +91,6 @@
     counters.forEach(function (c) { cObs.observe(c); });
   }
 
-  /* Slider Antes & Depois */
-  var ba = document.getElementById("ba");
-  var baRange = document.getElementById("baRange");
-  if (ba && baRange) {
-    var setPos = function (val) { ba.style.setProperty("--pos", val + "%"); };
-    baRange.addEventListener("input", function () { setPos(baRange.value); });
-    // arraste direto na imagem
-    var dragging = false;
-    var moveTo = function (clientX) {
-      var rect = ba.getBoundingClientRect();
-      var pct = Math.max(0, Math.min(100, ((clientX - rect.left) / rect.width) * 100));
-      setPos(pct); baRange.value = pct;
-    };
-    ba.addEventListener("pointerdown", function (e) { dragging = true; moveTo(e.clientX); });
-    window.addEventListener("pointermove", function (e) { if (dragging) moveTo(e.clientX); });
-    window.addEventListener("pointerup", function () { dragging = false; });
-  }
-
   /* FAQ: apenas um aberto por vez */
   var faqItems = document.querySelectorAll(".faq-item");
   faqItems.forEach(function (item) {

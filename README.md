@@ -10,10 +10,9 @@ index.html        Página única com todas as seções
 styles.css        Estilos (branco · rosa pastel · dourado · glassmorphism)
 script.js         Header dinâmico, menu mobile, scroll reveal
 assets/
-  favicon.svg     Ícone do site
-  dra-erica.svg   Placeholder da foto da Dra. (Hero + Sobre)
-  antes.svg       Placeholder da imagem "antes"
-  depois.svg      Placeholder da imagem "depois"
+  favicon.svg        Ícone do site
+  dra-erica.svg      Placeholder da foto da Dra. (Hero + Sobre)
+  antes-depois.svg   Placeholder da imagem única de antes e depois
 robots.txt
 sitemap.xml
 ```
@@ -23,15 +22,14 @@ sitemap.xml
 Salve as imagens dentro da pasta **`assets/`** com EXATAMENTE estes nomes. A página
 detecta cada arquivo automaticamente e troca o placeholder pela foto real — sem mexer no código:
 
-| Arquivo                 | Onde aparece            | Sugestão                          |
-| ----------------------- | ----------------------- | --------------------------------- |
-| `assets/dra-erica.jpg`  | Hero **e** seção Sobre  | Vertical, ~640×800px ou maior     |
-| `assets/antes.jpg`      | Slider Antes & Depois   | Horizontal, ~700×520px (mesma proporção da "depois") |
-| `assets/depois.jpg`     | Slider Antes & Depois   | Horizontal, ~700×520px (mesma proporção da "antes")  |
+| Arquivo                   | Onde aparece           | Sugestão                                   |
+| ------------------------- | ---------------------- | ------------------------------------------ |
+| `assets/dra-erica.jpg`    | Hero **e** seção Sobre | Vertical, ~640×800px ou maior              |
+| `assets/antes-depois.jpg` | Seção Antes & Depois   | Imagem única com antes e depois lado a lado |
 
-> Dica: use o **mesmo enquadramento e proporção** nas fotos de antes/depois para o
-> slider de comparação ficar perfeito. Enquanto os `.jpg` não existirem, placeholders
-> sofisticados são exibidos no lugar.
+> A imagem de antes/depois é **um único arquivo** (já com os dois lados na mesma foto).
+> Os selos "Antes" e "Depois" são adicionados automaticamente sobre a imagem.
+> Enquanto os `.jpg` não existirem, placeholders sofisticados são exibidos no lugar.
 
 ## Personalizações rápidas
 
