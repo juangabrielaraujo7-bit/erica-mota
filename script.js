@@ -101,6 +101,17 @@
     });
   });
 
+  /* Botão voltar ao topo */
+  var toTop = document.getElementById("toTop");
+  if (toTop) {
+    var toggleTop = function () { toTop.classList.toggle("show", window.scrollY > 600); };
+    toggleTop();
+    window.addEventListener("scroll", toggleTop, { passive: true });
+    toTop.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
   /* Ano no rodapé */
   var year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();

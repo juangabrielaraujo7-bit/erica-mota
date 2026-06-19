@@ -28,6 +28,9 @@ detecta cada arquivo automaticamente e troca o placeholder pela foto real — se
 | `assets/sobre`          | Seção Sobre          | **Vertical** (retrato), rosto na metade de cima  |
 | `assets/antes-depois-1` | Seção Antes & Depois | **Quadrada** (antes e depois lado a lado)        |
 | `assets/antes-depois-2` | Seção Antes & Depois | **Quadrada** (antes e depois lado a lado)        |
+| `assets/galeria-1`      | Seção Nosso Espaço   | **Quadrada** (foto principal, maior, do ambiente)|
+| `assets/galeria-2`      | Seção Nosso Espaço   | **Quadrada** (ambiente/recepção)                 |
+| `assets/galeria-3`      | Seção Nosso Espaço   | **Quadrada** (detalhe do espaço)                 |
 
 ### Formatos aceitos automaticamente
 
