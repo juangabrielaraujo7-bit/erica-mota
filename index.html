@@ -109,9 +109,47 @@
     ]
   }
   </script>
+
+  <!-- Schema.org FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Como funciona o primeiro atendimento?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Tudo começa com uma conversa e uma avaliação cuidadosa da sua pele e dos seus objetivos. A partir daí, a Dra. Erica monta um protocolo personalizado, pensado especialmente para você." }
+      },
+      {
+        "@type": "Question",
+        "name": "Onde fica a clínica?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Estamos na R. Bonifácio Cubas, 205 - Sala 4, Vila Albertina, na região da Freguesia do Ó, São Paulo - SP. Fácil acesso para toda a Zona Norte." }
+      },
+      {
+        "@type": "Question",
+        "name": "Quais tratamentos vocês oferecem?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Limpeza de pele, massagem relaxante, lash lifting, estética facial, estética corporal e tratamentos de estética avançada, sempre com foco em resultados naturais e elegantes." }
+      },
+      {
+        "@type": "Question",
+        "name": "Como faço para agendar?",
+        "acceptedAnswer": { "@type": "Answer", "text": "De forma simples e rápida: basta clicar em qualquer botão de WhatsApp da página. Você fala diretamente conosco e escolhe o melhor horário para a sua visita." }
+      },
+      {
+        "@type": "Question",
+        "name": "Os resultados são naturais?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sim. Nossa filosofia é valorizar a sua beleza com equilíbrio e elegância, respeitando as características de cada cliente para um resultado bonito e natural." }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
+
+  <!-- ===== BARRA DE PROGRESSO DE SCROLL ===== -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
   <!-- ===== HEADER ===== -->
   <header class="site-header" id="header">
@@ -128,9 +166,11 @@
         <a href="#credibilidade">Por que nós</a>
         <a href="#beneficios">Benefícios</a>
         <a href="#procedimentos">Procedimentos</a>
+        <a href="#resultados">Resultados</a>
         <a href="#sobre">Sobre</a>
         <a href="#depoimentos">Depoimentos</a>
         <a href="#localizacao">Localização</a>
+        <a href="#faq">FAQ</a>
       </nav>
 
       <a class="btn btn-gold header-cta" href="https://wa.me/5511965849446?text=Ol%C3%A1%2C%20Dra.%20Erica!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">Agendar</a>
@@ -173,9 +213,9 @@
           </div>
 
           <ul class="hero-trust">
-            <li><strong>5,0</strong><span>Nota máxima no Google</span></li>
-            <li><strong>100%</strong><span>Atendimento personalizado</span></li>
-            <li><strong>★★★★★</strong><span>Clientes que recomendam</span></li>
+            <li><strong data-count="5" data-decimals="1">5,0</strong><span>Nota máxima no Google</span></li>
+            <li><strong data-count="100" data-suffix="%">100%</strong><span>Atendimento personalizado</span></li>
+            <li><strong class="stars-strong">★★★★★</strong><span>Clientes que recomendam</span></li>
           </ul>
         </div>
 
@@ -196,6 +236,26 @@
       </div>
     </section>
 
+    <!-- ===== FAIXA DE PALAVRAS-CHAVE (MARQUEE) ===== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Estética Avançada</span><span class="dot">✦</span>
+        <span>Limpeza de Pele</span><span class="dot">✦</span>
+        <span>Lash Lifting</span><span class="dot">✦</span>
+        <span>Massagem Relaxante</span><span class="dot">✦</span>
+        <span>Estética Facial</span><span class="dot">✦</span>
+        <span>Estética Corporal</span><span class="dot">✦</span>
+        <span>Freguesia do Ó</span><span class="dot">✦</span>
+        <span>Estética Avançada</span><span class="dot">✦</span>
+        <span>Limpeza de Pele</span><span class="dot">✦</span>
+        <span>Lash Lifting</span><span class="dot">✦</span>
+        <span>Massagem Relaxante</span><span class="dot">✦</span>
+        <span>Estética Facial</span><span class="dot">✦</span>
+        <span>Estética Corporal</span><span class="dot">✦</span>
+        <span>Freguesia do Ó</span><span class="dot">✦</span>
+      </div>
+    </div>
+
     <!-- ===== CREDIBILIDADE / PROVA SOCIAL ===== -->
     <section class="credibility" id="credibilidade">
       <div class="container">
@@ -210,12 +270,12 @@
 
         <div class="cred-grid">
           <article class="cred-card glass reveal">
-            <span class="cred-num">5,0★</span>
+            <span class="cred-num"><span data-count="5" data-decimals="1">5,0</span>★</span>
             <h3>Nota máxima no Google</h3>
             <p>Avaliações reais de clientes que voltam e recomendam.</p>
           </article>
           <article class="cred-card glass reveal">
-            <span class="cred-num">100%</span>
+            <span class="cred-num"><span data-count="100" data-suffix="%">100%</span></span>
             <h3>Atendimento personalizado</h3>
             <p>Cada protocolo é pensado para a sua pele, o seu tempo e os seus objetivos.</p>
           </article>
@@ -368,6 +428,40 @@
       </div>
     </section>
 
+    <!-- ===== ANTES & DEPOIS ===== -->
+    <section class="results" id="resultados">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="kicker">Resultados reais</span>
+          <h2>Antes &amp; depois que falam por si</h2>
+          <p class="lead">
+            Arraste para comparar e veja a diferença de um cuidado feito com técnica,
+            delicadeza e foco em resultados naturais.
+          </p>
+        </div>
+
+        <div class="ba-wrap reveal">
+          <div class="ba" id="ba" style="--pos:50%;">
+            <img class="ba-img ba-after" src="assets/depois.jpg" onerror="this.onerror=null;this.src='assets/depois.svg'" alt="Resultado depois do tratamento estético com a Dra. Erica Mota" loading="lazy" />
+            <div class="ba-before-layer">
+              <img class="ba-img" src="assets/antes.jpg" onerror="this.onerror=null;this.src='assets/antes.svg'" alt="Pele antes do tratamento estético" loading="lazy" />
+            </div>
+            <span class="ba-tag ba-tag-before">Antes</span>
+            <span class="ba-tag ba-tag-after">Depois</span>
+            <div class="ba-handle" id="baHandle">
+              <span class="ba-arrow">‹</span><span class="ba-arrow">›</span>
+            </div>
+            <input type="range" min="0" max="100" value="50" step="0.1" class="ba-range" id="baRange" aria-label="Comparar imagem antes e depois" />
+          </div>
+        </div>
+        <p class="ba-note">Imagens ilustrativas. Resultados variam conforme a avaliação individual de cada cliente.</p>
+
+        <div class="results-cta reveal">
+          <a class="btn btn-gold btn-lg shine" href="https://wa.me/5511965849446?text=Ol%C3%A1%2C%20Dra.%20Erica!%20Quero%20saber%20qual%20tratamento%20%C3%A9%20ideal%20para%20mim." target="_blank" rel="noopener">Quero resultados assim</a>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== DEPOIMENTOS ===== -->
     <section class="testimonials" id="depoimentos">
       <div class="container">
@@ -424,7 +518,9 @@
 
           <ul class="loc-list">
             <li>
-              <span class="loc-ico" aria-hidden="true">📍</span>
+              <span class="loc-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0116 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
               <div>
                 <strong>Endereço</strong>
                 R. Bonifácio Cubas, 205 - Sala 4<br />
@@ -433,17 +529,31 @@
               </div>
             </li>
             <li>
-              <span class="loc-ico" aria-hidden="true">💬</span>
+              <span class="loc-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.728-.978zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              </span>
               <div>
                 <strong>WhatsApp</strong>
                 <a href="https://wa.me/5511965849446" target="_blank" rel="noopener">(11) 96584-9446</a>
               </div>
             </li>
             <li>
-              <span class="loc-ico" aria-hidden="true">📷</span>
+              <span class="loc-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+              </span>
               <div>
                 <strong>Instagram</strong>
                 <a href="https://www.instagram.com/dra.ericamota" target="_blank" rel="noopener">@dra.ericamota</a>
+              </div>
+            </li>
+            <li>
+              <span class="loc-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              </span>
+              <div>
+                <strong>Atendimento</strong>
+                Segunda a sábado, com horário marcado<br />
+                Agende pelo WhatsApp e garanta sua vaga
               </div>
             </li>
           </ul>
@@ -458,6 +568,44 @@
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
             allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="faq" id="faq">
+      <div class="container faq-grid">
+        <div class="faq-intro reveal">
+          <span class="kicker">Perguntas frequentes</span>
+          <h2>Tudo o que você precisa saber</h2>
+          <p class="lead">
+            Reunimos as dúvidas mais comuns de quem busca estética avançada na Freguesia do Ó.
+            Ficou com mais alguma? É só nos chamar no WhatsApp.
+          </p>
+          <a class="btn btn-ghost" href="https://wa.me/5511965849446?text=Ol%C3%A1%2C%20Dra.%20Erica!%20Tenho%20uma%20d%C3%BAvida." target="_blank" rel="noopener">Tirar uma dúvida</a>
+        </div>
+
+        <div class="faq-list reveal">
+          <details class="faq-item">
+            <summary><span>Como funciona o primeiro atendimento?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Tudo começa com uma conversa e uma avaliação cuidadosa da sua pele e dos seus objetivos. A partir daí, a Dra. Erica monta um protocolo personalizado, pensado especialmente para você.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary><span>Onde fica a clínica?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Estamos na R. Bonifácio Cubas, 205 - Sala 4, Vila Albertina, na região da Freguesia do Ó, São Paulo - SP. Fácil acesso para toda a Zona Norte.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary><span>Quais tratamentos vocês oferecem?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Limpeza de pele, massagem relaxante, lash lifting, estética facial, estética corporal e tratamentos de estética avançada — sempre com foco em resultados naturais e elegantes.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary><span>Como faço para agendar?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>De forma simples e rápida: basta clicar em qualquer botão de WhatsApp da página. Você fala diretamente conosco e escolhe o melhor horário para a sua visita.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary><span>Os resultados são naturais?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Sim. Nossa filosofia é valorizar a sua beleza com equilíbrio e elegância, respeitando as características de cada cliente para um resultado bonito e natural.</p></div>
+          </details>
         </div>
       </div>
     </section>

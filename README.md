@@ -11,18 +11,27 @@ styles.css        Estilos (branco · rosa pastel · dourado · glassmorphism)
 script.js         Header dinâmico, menu mobile, scroll reveal
 assets/
   favicon.svg     Ícone do site
-  dra-erica.svg   Placeholder elegante da foto (substituir pela foto real)
+  dra-erica.svg   Placeholder da foto da Dra. (Hero + Sobre)
+  antes.svg       Placeholder da imagem "antes"
+  depois.svg      Placeholder da imagem "depois"
 robots.txt
 sitemap.xml
 ```
 
-## Como adicionar a foto da Dra. Erica
+## Como adicionar as fotos (só soltar no repositório)
 
-1. Salve a foto como **`assets/dra-erica.jpg`** (recomendado: vertical, ~640×800px ou maior, boa iluminação).
-2. Pronto — a página detecta o arquivo automaticamente e troca o placeholder pela foto real,
-   tanto na Hero quanto na seção "Sobre".
+Salve as imagens dentro da pasta **`assets/`** com EXATAMENTE estes nomes. A página
+detecta cada arquivo automaticamente e troca o placeholder pela foto real — sem mexer no código:
 
-> Enquanto o `.jpg` não existir, um placeholder sofisticado é exibido no lugar.
+| Arquivo                 | Onde aparece            | Sugestão                          |
+| ----------------------- | ----------------------- | --------------------------------- |
+| `assets/dra-erica.jpg`  | Hero **e** seção Sobre  | Vertical, ~640×800px ou maior     |
+| `assets/antes.jpg`      | Slider Antes & Depois   | Horizontal, ~700×520px (mesma proporção da "depois") |
+| `assets/depois.jpg`     | Slider Antes & Depois   | Horizontal, ~700×520px (mesma proporção da "antes")  |
+
+> Dica: use o **mesmo enquadramento e proporção** nas fotos de antes/depois para o
+> slider de comparação ficar perfeito. Enquanto os `.jpg` não existirem, placeholders
+> sofisticados são exibidos no lugar.
 
 ## Personalizações rápidas
 

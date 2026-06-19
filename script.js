@@ -51,6 +51,74 @@
     reveals.forEach(function (el) { el.classList.add("in"); });
   }
 
+  /* Barra de progresso de scroll */
+  var progress = document.getElementById("scrollProgress");
+  if (progress) {
+    var updateProgress = function () {
+      var h = document.documentElement;
+      var max = h.scrollHeight - h.clientHeight;
+      var pct = max > 0 ? (h.scrollTop || window.scrollY) / max * 100 : 0;
+      progress.style.width = pct + "%";
+    };
+    updateProgress();
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    window.addEventListener("resize", updateProgress);
+  }
+
+  /* Contadores animados */
+  var counters = document.querySelectorAll("[data-count]");
+  var animateCount = function (el) {
+    var target = parseFloat(el.getAttribute("data-count"));
+    var decimals = parseInt(el.getAttribute("data-decimals") || "0", 10);
+    var suffix = el.getAttribute("data-suffix") || "";
+    var dur = 1400, start = null;
+    var step = function (ts) {
+      if (!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      var val = (target * eased).toFixed(decimals).replace(".", ",");
+      el.textContent = val + suffix;
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+  if (counters.length && "IntersectionObserver" in window) {
+    var cObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { animateCount(entry.target); cObs.unobserve(entry.target); }
+      });
+    }, { threshold: 0.6 });
+    counters.forEach(function (c) { cObs.observe(c); });
+  }
+
+  /* Slider Antes & Depois */
+  var ba = document.getElementById("ba");
+  var baRange = document.getElementById("baRange");
+  if (ba && baRange) {
+    var setPos = function (val) { ba.style.setProperty("--pos", val + "%"); };
+    baRange.addEventListener("input", function () { setPos(baRange.value); });
+    // arraste direto na imagem
+    var dragging = false;
+    var moveTo = function (clientX) {
+      var rect = ba.getBoundingClientRect();
+      var pct = Math.max(0, Math.min(100, ((clientX - rect.left) / rect.width) * 100));
+      setPos(pct); baRange.value = pct;
+    };
+    ba.addEventListener("pointerdown", function (e) { dragging = true; moveTo(e.clientX); });
+    window.addEventListener("pointermove", function (e) { if (dragging) moveTo(e.clientX); });
+    window.addEventListener("pointerup", function () { dragging = false; });
+  }
+
+  /* FAQ: apenas um aberto por vez */
+  var faqItems = document.querySelectorAll(".faq-item");
+  faqItems.forEach(function (item) {
+    item.addEventListener("toggle", function () {
+      if (item.open) {
+        faqItems.forEach(function (other) { if (other !== item) other.open = false; });
+      }
+    });
+  });
+
   /* Ano no rodapé */
   var year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();

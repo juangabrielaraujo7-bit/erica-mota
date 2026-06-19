@@ -264,8 +264,14 @@ section { padding: clamp(72px, 9vw, 130px) 0; }
 .location { background: var(--blush); }
 .location-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(36px, 5vw, 70px); align-items: center; }
 .loc-list { display: grid; gap: 18px; margin: 30px 0 32px; }
-.loc-list li { display: flex; gap: 16px; }
-.loc-ico { font-size: 1.3rem; flex-shrink: 0; }
+.loc-list li { display: flex; gap: 16px; align-items: flex-start; }
+.loc-ico {
+  flex-shrink: 0; display: grid; place-items: center; width: 46px; height: 46px; border-radius: 14px;
+  background: #fff; border: 1px solid var(--line); color: var(--gold-deep); box-shadow: var(--shadow-sm);
+  transition: transform .4s var(--ease), color .4s var(--ease), background .4s var(--ease);
+}
+.loc-list li:hover .loc-ico { transform: translateY(-3px); background: linear-gradient(135deg, var(--blush), var(--rose)); }
+.loc-ico svg { width: 22px; height: 22px; }
 .loc-list strong { display: block; font-family: var(--serif); font-size: 1.15rem; color: var(--ink); margin-bottom: 2px; }
 .loc-list div { color: var(--ink-soft); font-size: 0.95rem; }
 .loc-list a { color: var(--gold-deep); transition: color .3s var(--ease); }
@@ -304,6 +310,109 @@ section { padding: clamp(72px, 9vw, 130px) 0; }
 .footer-contact span { color: rgba(255,255,255,0.55); line-height: 1.5; }
 .footer-bottom { text-align: center; padding: 24px 0 30px; font-size: 0.82rem; color: rgba(255,255,255,0.5); }
 .footer-seo { margin-top: 8px; font-size: 0.78rem; color: rgba(255,255,255,0.35); }
+
+/* ============================================================
+   BARRA DE PROGRESSO DE SCROLL
+   ============================================================ */
+.scroll-progress {
+  position: fixed; top: 0; left: 0; height: 3px; width: 0%; z-index: 200;
+  background: linear-gradient(90deg, var(--rose-deep), var(--gold));
+  box-shadow: 0 0 12px rgba(198,166,103,0.5);
+  transition: width .1s linear;
+}
+
+/* ============================================================
+   FAIXA DE PALAVRAS-CHAVE (MARQUEE)
+   ============================================================ */
+.marquee {
+  overflow: hidden; padding: 22px 0; border-block: 1px solid var(--line);
+  background: linear-gradient(90deg, var(--cream), var(--blush), var(--cream));
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+.marquee-track {
+  display: inline-flex; align-items: center; gap: 28px; white-space: nowrap;
+  animation: marquee 32s linear infinite; will-change: transform;
+}
+.marquee-track span { font-family: var(--serif); font-size: 1.5rem; color: var(--ink); font-style: italic; }
+.marquee-track .dot { color: var(--gold); font-size: 0.9rem; font-style: normal; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ============================================================
+   BOTÃO COM BRILHO
+   ============================================================ */
+.shine { position: relative; overflow: hidden; }
+.shine::after {
+  content: ""; position: absolute; top: 0; left: -120%; width: 60%; height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,0.5), transparent);
+  transform: skewX(-20deg); animation: shine 3.4s ease-in-out infinite;
+}
+@keyframes shine { 0% { left: -120%; } 55%, 100% { left: 140%; } }
+
+/* ============================================================
+   ANTES & DEPOIS (SLIDER)
+   ============================================================ */
+.results { background: linear-gradient(180deg, var(--white), var(--cream)); }
+.ba-wrap { max-width: 860px; margin: 56px auto 0; }
+.ba {
+  position: relative; border-radius: var(--radius-lg); overflow: hidden;
+  box-shadow: var(--shadow-lg); border: 8px solid #fff; cursor: ew-resize;
+  user-select: none; touch-action: none; aspect-ratio: 7 / 5; background: var(--blush);
+}
+.ba-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.ba-before-layer { position: absolute; inset: 0; overflow: hidden; clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
+.ba-handle {
+  position: absolute; top: 0; bottom: 0; left: var(--pos); width: 2px;
+  background: rgba(255,255,255,0.9); box-shadow: 0 0 12px rgba(0,0,0,0.25);
+  transform: translateX(-50%); display: flex; align-items: center; justify-content: center;
+}
+.ba-handle::before {
+  content: ""; position: absolute; width: 48px; height: 48px; border-radius: 50%;
+  background: rgba(255,255,255,0.95); box-shadow: var(--shadow-md);
+  border: 1px solid var(--glass-border);
+}
+.ba-arrow { position: relative; z-index: 2; color: var(--gold-deep); font-size: 1.4rem; line-height: 1; margin: 0 1px; font-weight: 700; }
+.ba-tag {
+  position: absolute; top: 18px; padding: 7px 16px; border-radius: 999px; z-index: 3;
+  font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 500; color: #fff;
+}
+.ba-tag-before { left: 18px; background: rgba(110,99,96,0.85); backdrop-filter: blur(4px); }
+.ba-tag-after { right: 18px; background: linear-gradient(135deg, var(--gold), var(--gold-deep)); }
+.ba-range { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; margin: 0; z-index: 4; }
+.ba-note { text-align: center; font-size: 0.82rem; color: var(--ink-soft); margin-top: 18px; font-style: italic; }
+.results-cta { text-align: center; margin-top: 36px; }
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq { background: var(--white); }
+.faq-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(36px, 5vw, 80px); align-items: start; }
+.faq-intro { position: sticky; top: 110px; }
+.faq-intro .btn { margin-top: 24px; }
+.faq-list { display: flex; flex-direction: column; gap: 14px; }
+.faq-item {
+  border: 1px solid var(--line); border-radius: var(--radius); background: var(--cream);
+  padding: 4px 26px; transition: background .4s var(--ease), box-shadow .4s var(--ease), border-color .4s var(--ease);
+}
+.faq-item[open] { background: #fff; box-shadow: var(--shadow-md); border-color: var(--gold-soft); }
+.faq-item summary {
+  list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 18px;
+  padding: 22px 0; font-family: var(--serif); font-size: 1.28rem; color: var(--ink);
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-icon { position: relative; flex-shrink: 0; width: 22px; height: 22px; }
+.faq-icon::before, .faq-icon::after {
+  content: ""; position: absolute; top: 50%; left: 50%; background: var(--gold-deep);
+  transform: translate(-50%, -50%); transition: transform .35s var(--ease);
+}
+.faq-icon::before { width: 14px; height: 2px; }
+.faq-icon::after { width: 2px; height: 14px; }
+.faq-item[open] .faq-icon::after { transform: translate(-50%, -50%) rotate(90deg); opacity: 0; }
+.faq-answer { overflow: hidden; }
+.faq-answer p { padding-bottom: 24px; color: var(--ink-soft); font-size: 0.98rem; }
+.faq-item[open] .faq-answer { animation: faqOpen .45s var(--ease); }
+@keyframes faqOpen { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
 
 /* ============================================================
    WHATSAPP FLUTUANTE
@@ -350,6 +459,8 @@ section { padding: clamp(72px, 9vw, 130px) 0; }
   .about-visual { max-width: 460px; margin-inline: auto; }
   .test-grid { grid-template-columns: 1fr; max-width: 560px; margin-inline: auto; }
   .location-grid { grid-template-columns: 1fr; }
+  .faq-grid { grid-template-columns: 1fr; }
+  .faq-intro { position: static; }
   .footer-grid { grid-template-columns: 1fr; gap: 28px; text-align: left; }
 }
 
@@ -362,6 +473,9 @@ section { padding: clamp(72px, 9vw, 130px) 0; }
   .hero-actions { flex-direction: column; }
   .hero-actions .btn { width: 100%; }
   .about-actions .btn { width: 100%; }
+  .marquee-track span { font-size: 1.2rem; }
+  .ba { aspect-ratio: 3 / 4; }
+  .faq-item summary { font-size: 1.1rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
