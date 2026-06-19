@@ -181,10 +181,10 @@ section { padding: clamp(72px, 9vw, 130px) 0; }
 .badge-name { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; color: var(--ink); }
 .badge-role { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-deep); }
 
-.hero-float { position: absolute; top: 30px; right: -10px; max-width: 230px; padding: 18px 20px; border-radius: 18px; animation: float 10s ease-in-out infinite; }
-.hero-float p { font-size: 0.9rem; color: var(--ink); font-style: italic; margin: 8px 0 6px; line-height: 1.4; }
-.hero-float span { font-size: 0.78rem; color: var(--ink-soft); }
-.stars { color: var(--gold); letter-spacing: 2px; font-size: 0.9rem; }
+.hero-float { position: absolute; bottom: 96px; right: -8px; top: auto; max-width: 188px; padding: 14px 16px; border-radius: 16px; animation: float 10s ease-in-out infinite; }
+.hero-float p { font-size: 0.82rem; color: var(--ink); font-style: italic; margin: 7px 0 5px; line-height: 1.4; }
+.hero-float span { font-size: 0.72rem; color: var(--ink-soft); }
+.stars { color: var(--gold); letter-spacing: 2px; font-size: 0.82rem; }
 
 /* ============================================================
    CREDIBILIDADE
@@ -443,7 +443,7 @@ section { padding: clamp(72px, 9vw, 130px) 0; }
 
   .hero-grid { grid-template-columns: 1fr; }
   .hero-visual { order: -1; max-width: 460px; margin-inline: auto; }
-  .hero-float { right: 0; }
+  .hero-float { right: 4px; bottom: 90px; max-width: 172px; }
   .cred-grid { grid-template-columns: repeat(2, 1fr); }
   .benefits-grid { grid-template-columns: 1fr; }
   .benefits-intro { position: static; }
@@ -463,6 +463,8 @@ section { padding: clamp(72px, 9vw, 130px) 0; }
   .benefits-list { grid-template-columns: 1fr; }
   .proc-grid { grid-template-columns: 1fr; }
   .hero-trust { gap: 22px; }
+  .hero-float { max-width: 156px; bottom: 70px; padding: 12px 14px; }
+  .hero-float p { font-size: 0.78rem; }
   .btn-lg { width: 100%; }
   .hero-actions { flex-direction: column; }
   .hero-actions .btn { width: 100%; }
