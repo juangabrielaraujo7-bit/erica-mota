@@ -22,17 +22,26 @@ sitemap.xml
 Salve as imagens dentro da pasta **`assets/`** com EXATAMENTE estes nomes. A página
 detecta cada arquivo automaticamente e troca o placeholder pela foto real — sem mexer no código:
 
-| Arquivo                     | Onde aparece         | Sugestão                                    |
-| --------------------------- | -------------------- | ------------------------------------------- |
-| `assets/dra-erica.jpg`      | Hero (topo)          | Vertical, ~640×800px ou maior               |
-| `assets/sobre.jpg`          | Seção Sobre          | Vertical, ~560×700px ou maior               |
-| `assets/antes-depois-1.jpg` | Seção Antes & Depois | Imagem única com antes e depois lado a lado |
-| `assets/antes-depois-2.jpg` | Seção Antes & Depois | Imagem única com antes e depois lado a lado |
+| Arquivo                 | Onde aparece         | Enquadramento ideal                              |
+| ----------------------- | -------------------- | ------------------------------------------------ |
+| `assets/dra-erica`      | Hero (topo)          | **Vertical** (retrato), rosto na metade de cima  |
+| `assets/sobre`          | Seção Sobre          | **Vertical** (retrato), rosto na metade de cima  |
+| `assets/antes-depois-1` | Seção Antes & Depois | **Quadrada** (antes e depois lado a lado)        |
+| `assets/antes-depois-2` | Seção Antes & Depois | **Quadrada** (antes e depois lado a lado)        |
 
-> Cada imagem de antes/depois é **um único arquivo** (já com os dois lados na mesma foto).
-> São exibidas duas, lado a lado. Os selos "Antes" e "Depois" são adicionados
-> automaticamente sobre cada imagem. Enquanto os `.jpg` não existirem, placeholders
-> sofisticados são exibidos no lugar.
+### Formatos aceitos automaticamente
+
+Você pode salvar em **`.jpg`, `.jpeg`, `.png` ou `.webp`** — a página testa os formatos
+nessa ordem e usa o primeiro que encontrar. Ex.: pode ser `dra-erica.jpg` **ou**
+`dra-erica.png`. Enquanto nenhum existir, um placeholder sofisticado é exibido.
+
+### Dicas de enquadramento ("ficar top")
+
+- **Hero e Sobre:** fotos **verticais** (em pé). O recorte foca a metade de cima da
+  imagem, então deixe o rosto na parte superior/central. Ideal a partir de ~640×800px.
+- **Antes & Depois:** use imagens **quadradas** (1:1, como as do Instagram), cada uma já
+  com o antes e o depois na mesma foto. As duas são exibidas lado a lado, do mesmo tamanho.
+  Os selos "Antes" e "Depois" entram por cima automaticamente — não precisa editar a foto.
 
 ## Personalizações rápidas
 
